@@ -184,12 +184,12 @@ namespace GD14_1133_Dice_Game_Alcaraz_Arlet.Scripts
 
             if (computerTwoTotal > computerOneTotal)
             {
-                Debug.Log("The computer wins!!!");
+                Debug.Log("Computer 2 wins!!!");
                 cpuTwoScore = +1;
             }
             else if (computerTwoTotal < computerOneTotal)
             {
-                Debug.Log("You won!!!");
+                Debug.Log("Computer 1 wins!!!");
                 cpuOneScore = +1;
             }
             else if (computerTwoTotal == computerOneTotal)
