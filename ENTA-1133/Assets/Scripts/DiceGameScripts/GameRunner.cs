@@ -6,7 +6,8 @@ public class GameRunner : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        GameManager.ProgramStart();
+        GameManager gameManager = new GameManager();
+        gameManager.ProgramStart();
     }
 
     // Update is called once per frame

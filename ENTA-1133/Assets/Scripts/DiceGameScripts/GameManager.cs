@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace GD14_1133_Dice_Game_Alcaraz_Arlet.Scripts
 {
@@ -6,18 +7,21 @@ namespace GD14_1133_Dice_Game_Alcaraz_Arlet.Scripts
     {
         public void ProgramStart()
         {
-            Player.User(); //Decided to add this one first so it looks more clean
+            //Player.User(); //Took this down since i dont need player username
             Intro(); 
             RollOrDie();
             Outro();
         }
         private void Intro()
         {
+            DateTime today = DateTime.Now.Date;
+            Debug.Log("Welcome to Dice Rolling! My name is Arlet Alcaraz and today is " + today);
             Debug.Log("Let's roll some dice! May the odds be ever in your favor\n");
         }
         private void RollOrDie()
         {
-            RandomTurn.Turn();
+            RandomTurn randomTurn = new RandomTurn();
+            randomTurn.Turn();
         }
         private static void Outro()
         {

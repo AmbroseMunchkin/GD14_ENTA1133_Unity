@@ -8,7 +8,7 @@ namespace GD14_1133_Dice_Game_Alcaraz_Arlet.Scripts
 {
     internal class Player
     {
-        public static void User()
+        public void User()
         {
            
             Console.Write("Please enter your username:");
