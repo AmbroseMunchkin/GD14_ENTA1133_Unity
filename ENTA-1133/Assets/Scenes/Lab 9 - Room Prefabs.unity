@@ -268,6 +268,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChestRoom Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 6239560718697268558, guid: e168596a61c51be48ad9d7ff9406f4ac, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 42d42bb7a9f43cd46869bf0ef3c1d76d, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
