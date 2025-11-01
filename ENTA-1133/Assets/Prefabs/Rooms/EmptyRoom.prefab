@@ -118,6 +118,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1082718946862982629}
+  - component: {fileID: 2176725118486340281}
   m_Layer: 0
   m_Name: EmptyRoom
   m_TagString: Untagged
@@ -145,6 +146,22 @@ Transform:
   - {fileID: 7058525524777350644}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2176725118486340281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4031012124064698415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4f80142f9fdd0140a093bf5b722b82e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NorthDoorway: {fileID: 1573009837072025403}
+  EastDoorway: {fileID: 1515448844349679084}
+  SouthDoorway: {fileID: 86138859768248906}
+  WestDoorway: {fileID: 4498644028375254355}
 --- !u!1001 &2026824753034502017
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -153,6 +170,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1082718946862982629}
     m_Modifications:
+    - target: {fileID: 2472158124655139538, guid: 695b841558985884cac654128e5048e4, type: 3}
+      propertyPath: m_Name
+      value: WDoorway
+      objectReference: {fileID: 0}
     - target: {fileID: 3338394552714511080, guid: 695b841558985884cac654128e5048e4, type: 3}
       propertyPath: m_Name
       value: WestWall
@@ -202,6 +223,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 695b841558985884cac654128e5048e4, type: 3}
+--- !u!1 &4498644028375254355 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2472158124655139538, guid: 695b841558985884cac654128e5048e4, type: 3}
+  m_PrefabInstance: {fileID: 2026824753034502017}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7022771506295821678 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9031229243935705839, guid: 695b841558985884cac654128e5048e4, type: 3}
@@ -215,6 +241,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1082718946862982629}
     m_Modifications:
+    - target: {fileID: 2472158124655139538, guid: 695b841558985884cac654128e5048e4, type: 3}
+      propertyPath: m_Name
+      value: SDoorway
+      objectReference: {fileID: 0}
     - target: {fileID: 3338394552714511080, guid: 695b841558985884cac654128e5048e4, type: 3}
       propertyPath: m_Name
       value: SouthWall
@@ -264,6 +294,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 695b841558985884cac654128e5048e4, type: 3}
+--- !u!1 &86138859768248906 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2472158124655139538, guid: 695b841558985884cac654128e5048e4, type: 3}
+  m_PrefabInstance: {fileID: 2557156600795996312}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6785103042163632759 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9031229243935705839, guid: 695b841558985884cac654128e5048e4, type: 3}
@@ -277,6 +312,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1082718946862982629}
     m_Modifications:
+    - target: {fileID: 2472158124655139538, guid: 695b841558985884cac654128e5048e4, type: 3}
+      propertyPath: m_Name
+      value: EDoorway
+      objectReference: {fileID: 0}
     - target: {fileID: 3338394552714511080, guid: 695b841558985884cac654128e5048e4, type: 3}
       propertyPath: m_Name
       value: EastWall
@@ -326,6 +365,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 695b841558985884cac654128e5048e4, type: 3}
+--- !u!1 &1515448844349679084 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2472158124655139538, guid: 695b841558985884cac654128e5048e4, type: 3}
+  m_PrefabInstance: {fileID: 3983761553766186814}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5340272053016540625 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9031229243935705839, guid: 695b841558985884cac654128e5048e4, type: 3}
@@ -339,6 +383,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1082718946862982629}
     m_Modifications:
+    - target: {fileID: 2472158124655139538, guid: 695b841558985884cac654128e5048e4, type: 3}
+      propertyPath: m_Name
+      value: NDoorway
+      objectReference: {fileID: 0}
     - target: {fileID: 3338394552714511080, guid: 695b841558985884cac654128e5048e4, type: 3}
       propertyPath: m_Name
       value: NorthWall
@@ -388,6 +436,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 695b841558985884cac654128e5048e4, type: 3}
+--- !u!1 &1573009837072025403 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2472158124655139538, guid: 695b841558985884cac654128e5048e4, type: 3}
+  m_PrefabInstance: {fileID: 4006702472976784873}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5390797271092532998 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9031229243935705839, guid: 695b841558985884cac654128e5048e4, type: 3}
