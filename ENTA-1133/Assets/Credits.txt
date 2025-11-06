@@ -1,0 +1,22 @@
+Credits for assets and materials used:
+
+Chest:
+"Treasure Chest" (https://skfb.ly/6wyVD) by Multipainkiller Studio is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
+
+Potion:
+https://sketchfab.com/3d-models/potion-bottle-e3f19d8f36944232bbff8ae10a1475a6
+
+Weapons:
+"Weapon set" (https://skfb.ly/6G9Ut) by rudolfs is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
+
+Diamond Floor material:
+https://freepbr.com/product/diamond-inlay-tile-pbr
+
+Granite Tile material:
+https://freepbr.com/product/granite-tile-pbr
+
+Fractured Wallpaper material:
+https://freepbr.com/product/modern-fractured-wallpaper
+
+Tiled Stone material:
+https://freepbr.com/product/old-stone-tile-pbr-material
