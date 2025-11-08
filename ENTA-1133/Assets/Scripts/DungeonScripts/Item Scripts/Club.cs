@@ -10,7 +10,7 @@ public class Club : Weapon
 
     internal override int Used()
     {
-        damage = Roll();
+        //damage = Roll();
         Debug.Log("You hit the moster with the club, it makes " + damage + " damage!");
         return damage;
     }
@@ -18,7 +18,7 @@ public class Club : Weapon
     internal override int Roll()
     {
         var roll = Random.Range(minRoll, maxRoll);
-        damage = roll;
+        //damage = roll;
         return damage;
     }
 }

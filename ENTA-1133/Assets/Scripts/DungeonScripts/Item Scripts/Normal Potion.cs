@@ -10,7 +10,7 @@ public class NormalPotion : Consumable
 
     internal override int Used()
     {
-        hpRestored = Roll();
+        //hpRestored = Roll();
         Debug.Log("You take the potion and drink it in a couple of sips, it restores " + hpRestored + " health!");
         return hpRestored;
     }
@@ -18,7 +18,7 @@ public class NormalPotion : Consumable
     internal override int Roll()
     {
         var roll = Random.Range(minRoll, maxRoll);
-        hpRestored = roll;
+        //hpRestored = roll;
         return hpRestored;
     }
 }
