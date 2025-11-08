@@ -48,5 +48,8 @@ MonoBehaviour:
   - {fileID: 2176725118486340281, guid: daed91c226ef29a4e9e31cd88b1a22ea, type: 3}
   - {fileID: 3009126325185054647, guid: e168596a61c51be48ad9d7ff9406f4ac, type: 3}
   - {fileID: 6283387590806931439, guid: 5ef700a1d3d32484fb94ca72cb672d67, type: 3}
+  - {fileID: 6680746247753822324, guid: 287abf50f29b676418477614cd033639, type: 3}
+  - {fileID: 7055842457170947260, guid: a2edcecc2f2ea2f4da5c710d3b4b3def, type: 3}
+  - {fileID: 936496745422602755, guid: a38c7ecd2ff661b408ce5e77a45b5638, type: 3}
   RoomSize: 5
-  MapSize: 9
+  MapSize: 10
