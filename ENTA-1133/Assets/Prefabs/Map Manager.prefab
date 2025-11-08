@@ -53,4 +53,4 @@ MonoBehaviour:
   - {fileID: 936496745422602755, guid: a38c7ecd2ff661b408ce5e77a45b5638, type: 3}
   - {fileID: 5943020377961026508, guid: cf25eeb357425da4285ed673b634c366, type: 3}
   RoomSize: 5
-  MapSize: 10
+  MapSize: 5

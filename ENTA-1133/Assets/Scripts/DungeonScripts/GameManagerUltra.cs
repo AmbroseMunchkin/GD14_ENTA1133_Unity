@@ -34,9 +34,9 @@ public class GameManagerUltra : MonoBehaviour
     private void SpawnPlayer()
     {
         Debug.Log("GameManager SpawnPlayer Begins");
-        var randomStartingRoom = _gameMap.Rooms[Random.Range(0, _gameMap.MapSizeR - 1), Random.Range(0, _gameMap.MapSizeR - 1)]; 
+        var randomStartingRoom = _gameMap.Rooms[Random.Range(0, _gameMap.MapSizeR), Random.Range(0, _gameMap.MapSizeR)]; 
         _playerController = Instantiate(PlayerPrefab, transform);
-        _playerController.transform.position = new Vector3(randomStartingRoom.transform.position.x, 1, randomStartingRoom.transform.position.z);
+        _playerController.transform.position = new Vector3(randomStartingRoom.transform.position.x, 0, randomStartingRoom.transform.position.z);
         _playerController.Setup();
         Debug.Log("GameManager SpawnPlayer Complete");
     }
