@@ -6,6 +6,8 @@ public class MapManager : MonoBehaviour
     [SerializeField] private float RoomSize = 1;
     [SerializeField] private int MapSize = 3;
     private RoomBase[,] _map;
+    public RoomBase[,] Rooms => _map;
+    public int MapSizeR => MapSize;
     public void CreateMap()
     {
         _map = new RoomBase[MapSize, MapSize];
