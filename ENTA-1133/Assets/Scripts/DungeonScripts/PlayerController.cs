@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     public Vector2 Move;
+    //Directions N,E,S and W gets set for rotation and walking movement
     private Dictionary<Direction, int> _rotationByDirection = new()
     {
         {Direction.North, 0 },
@@ -28,6 +29,8 @@ public class PlayerController : MonoBehaviour
     private float _movementTimer = 0.0f;
     private Vector3 _previousPosition;
     private Vector3 _moveToPosition;
+
+    //The direction is being set up here
     public void Setup()
     {
         Direction[] directions = new Direction[] { Direction.North, Direction.East, Direction.South, Direction.West };
@@ -36,27 +39,37 @@ public class PlayerController : MonoBehaviour
 
         SetFacingDirection();
     }
+
+    //Rotation starts
     private void StartRotating()
     {
         _previousRotation = transform.rotation;
         _isRotating = true;
     }
+
+    //Facing direction gets set here
     private void SetFacingDirection()
     {
         Vector3 facing = transform.rotation.eulerAngles;
         facing.y = _rotationByDirection[_facingDirection];
         transform.rotation = Quaternion.Euler(facing);
     }
+
+    //Movement starts
     private void StartMovement(RoomBase targetRoom)
     {
         _previousPosition = transform.position;
         _moveToPosition = targetRoom.transform.position;
         _isMoving = true;
     }
+
+    //Gets the WASD input for movement
     public void OnMove(InputValue value)
     {
         MoveInput(value.Get<Vector2>());
     }
+
+    //Gets the space bar input for searching the rooms
     public void OnSearch()
     {
         if (_currentRoom != null)
@@ -64,10 +77,12 @@ public class PlayerController : MonoBehaviour
             _currentRoom.OnRoomSearched();
         }
     }
+
+    //WASD and SPACE BAR inputs get called here with their respective actions
     private void MoveInput(Vector2 newMoveDirection)
     {
         Move = newMoveDirection;
-        //Debug.Log($"Move input: {Move.x} {Move.y}");
+        //Debug.Log($"Move input: {Move.x} {Move.y}");   //To get visual values on what using WASD do
         if (Move.x < 0)
         {
             TurnLeft();
@@ -81,6 +96,8 @@ public class PlayerController : MonoBehaviour
             MoveFoward();
         }
     }
+
+    //Sets the new facing direction when player inputs D key
     private void TurnLeft()
     {
         switch (_facingDirection)
@@ -100,6 +117,8 @@ public class PlayerController : MonoBehaviour
         }
         StartRotating();
     }
+
+    //Sets the new facing direction when player inputs A key
     private void TurnRight()
     {
         switch (_facingDirection)
@@ -119,6 +138,8 @@ public class PlayerController : MonoBehaviour
         }
         StartRotating();
     }
+
+    //The player moves foward if there is a room in the facing direction, if not it wont go foward
     private void MoveFoward()
     {
         RoomBase roomInFacingDirection = NextRoomInDirection();
@@ -128,6 +149,8 @@ public class PlayerController : MonoBehaviour
         }
         Debug.Log("You move foward");
     }
+
+    //Sets the next room the player will move to
     private RoomBase NextRoomInDirection()
     {
         if (_currentRoom == null)
@@ -149,11 +172,14 @@ public class PlayerController : MonoBehaviour
                 return null;
         }
     }
+
+    //When player enters the room it triggers the collider of set room
     private void OnTriggerEnter(Collider otherObject)
     {
         _currentRoom = otherObject.GetComponent<RoomBase>();
         _currentRoom.OnRoomEntered();
     }
+    //When player exits the room it triggers the collider of set room
     private void OnTriggerExit(Collider otherObject)
     {
         RoomBase exitingRoom = otherObject.GetComponent<RoomBase>();
@@ -161,6 +187,7 @@ public class PlayerController : MonoBehaviour
     }
     private void Update()
     {
+        //Does the actual rotation once _isRotating is set to true
         if (_isRotating)
         {
             Quaternion currentRotation = Quaternion.Lerp(_previousRotation, Quaternion.Euler(new Vector3(0, _rotationByDirection[_facingDirection])), _rotationTimer / RotationTime);
@@ -174,6 +201,7 @@ public class PlayerController : MonoBehaviour
                 SetFacingDirection();
             }
         }
+        //Does the actual movement once _isMoving is set to true
         if (_isMoving)
         {
             Vector3 currentPositon = Vector3.Slerp(_previousPosition, _moveToPosition, _movementTimer / MovementTime);

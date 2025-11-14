@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class MapManager : MonoBehaviour
 {
+    //In unity we fill the room prefabs
     [SerializeField] private RoomBase[] RoomPrefabs;
     [SerializeField] private float RoomSize = 1;
     [SerializeField] private int MapSize = 3;
@@ -35,8 +36,8 @@ public class MapManager : MonoBehaviour
                 RoomBase north = null, south = null, east = null, west = null;
                 if (x > 0) east = _map[x - 1, z];       //Checks if there can be a east room
                 if (x < MapSize - 1) west = _map[x + 1, z];   //Checks if there can be a west room 
-                if (z > 0) north = _map[x, z - 1];       //Checks if there can be a west room
-                if (z < MapSize - 1) south = _map[x, z + 1];   //Checks if there can be an east room
+                if (z > 0) north = _map[x, z - 1];       //Checks if there can be a north room
+                if (z < MapSize - 1) south = _map[x, z + 1];   //Checks if there can be an south room
                 currentRoom.SetRooms(north, south, east, west);
             }
         }

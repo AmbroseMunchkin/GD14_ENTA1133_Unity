@@ -19,9 +19,9 @@ public class GameManagerUltra : MonoBehaviour
         StartGame();
 
         Debug.Log("GameManager Start Complete");
-
-
     }
+
+    //Generates the map
     private void SetupMap()
     {
         Debug.Log("GameManager SetupMap Begins");
@@ -31,6 +31,8 @@ public class GameManagerUltra : MonoBehaviour
         _gameMap.CreateMap();
         Debug.Log("GameManager Map Created");
     }
+
+    //Player spawns at a random location between the rooms generated once the map is fully generated
     private void SpawnPlayer()
     {
         Debug.Log("GameManager SpawnPlayer Begins");
@@ -40,6 +42,7 @@ public class GameManagerUltra : MonoBehaviour
         _playerController.Setup();
         Debug.Log("GameManager SpawnPlayer Complete");
     }
+
     private void StartGame()
     {
         Debug.Log("GameManager StartGame Begins");

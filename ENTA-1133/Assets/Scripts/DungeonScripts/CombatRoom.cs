@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class CombatRoom : RoomBase
 {
-    [SerializeField] private Enemy[] EnemyPrefab;
+    [SerializeField] private Enemy[] EnemyPrefab; //The enemy gets spawned when the player searches or enters the room
 
     public override void OnRoomEntered()
     {

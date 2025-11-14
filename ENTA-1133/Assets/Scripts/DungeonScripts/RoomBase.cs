@@ -2,14 +2,16 @@ using UnityEngine;
 
 public class RoomBase : MonoBehaviour
 {
-    [SerializeField] private GameObject NorthDoorway, EastDoorway, SouthDoorway, WestDoorway;
+    [SerializeField] private GameObject NorthDoorway, EastDoorway, SouthDoorway, WestDoorway; //Here i link in Unity inspector the correct doorways
+
     private RoomBase _north, _south, _east, _west;
 
-    public RoomBase South { get => _south; set => _south = value; }
+    public RoomBase South { get => _south; set => _south = value; } 
     public RoomBase North { get => _north; set => _north = value; }
     public RoomBase East { get => _east; set => _east = value; }
     public RoomBase West { get => _west; set => _west = value; }
 
+    //Rooms get connected here to activate doorways
     public void SetRooms(RoomBase roomNorth, RoomBase roomSouth, RoomBase roomEast, RoomBase roomWest)
     {
         North = roomNorth;
@@ -21,6 +23,8 @@ public class RoomBase : MonoBehaviour
         West = roomWest;
         WestDoorway.SetActive(West == null);
     }
+
+    //This ones are virtual so combat and treasure rooms can override them
     public virtual void OnRoomEntered()
     {
         Debug.Log("You enter an empty room");
