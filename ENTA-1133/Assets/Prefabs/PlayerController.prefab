@@ -80,7 +80,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Move: {x: 0, y: 0}
   RotationTime: 0.5
-  WalkingTime: 1
+  MovementTime: 2
 --- !u!54 &1231437216266050930
 Rigidbody:
   m_ObjectHideFlags: 0

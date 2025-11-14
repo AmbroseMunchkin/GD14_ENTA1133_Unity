@@ -12,16 +12,22 @@ public class PlayerController : MonoBehaviour
         {Direction.South, 180 },
         {Direction.West, 270 }
     };
+    //Smooth rotation
     private Direction _facingDirection;
     private bool _isRotating = false;
-    private bool _isWalking = false;
 
     [SerializeField] private float RotationTime = 0.5f;
-    [SerializeField] private float WalkingTime = 1.0f;
     private float _rotationTimer = 0.0f;
     private Quaternion _previousRotation;
 
     private RoomBase _currentRoom = null;
+
+    //Smooth movement
+    [SerializeField] private float MovementTime = 2.0f;
+    private bool _isMoving = false;
+    private float _movementTimer = 0.0f;
+    private Vector3 _previousPosition;
+    private Vector3 _moveToPosition;
     public void Setup()
     {
         Direction[] directions = new Direction[] { Direction.North, Direction.East, Direction.South, Direction.West };
@@ -41,6 +47,12 @@ public class PlayerController : MonoBehaviour
         facing.y = _rotationByDirection[_facingDirection];
         transform.rotation = Quaternion.Euler(facing);
     }
+    private void StartMovement(RoomBase targetRoom)
+    {
+        _previousPosition = transform.position;
+        _moveToPosition = targetRoom.transform.position;
+        _isMoving = true;
+    }
     public void OnMove(InputValue value)
     {
         MoveInput(value.Get<Vector2>());
@@ -55,7 +67,7 @@ public class PlayerController : MonoBehaviour
     private void MoveInput(Vector2 newMoveDirection)
     {
         Move = newMoveDirection;
-        Debug.Log($"Move input: {Move.x} {Move.y}");
+        //Debug.Log($"Move input: {Move.x} {Move.y}");
         if (Move.x < 0)
         {
             TurnLeft();
@@ -109,22 +121,33 @@ public class PlayerController : MonoBehaviour
     }
     private void MoveFoward()
     {
-        //switch (_facingDirection)
-        //{
-        //    case Direction.South:
-        //        _facingDirection = Direction.West;
-        //        break;
-        //    case Direction.North:
-        //        _facingDirection = Direction.East;
-        //        break;
-        //    case Direction.East:
-        //        _facingDirection = Direction.South;
-        //        break;
-        //    case Direction.West:
-        //        _facingDirection = Direction.North;
-        //        break;
-        //}
-        Debug.Log("You try to move foward");
+        RoomBase roomInFacingDirection = NextRoomInDirection();
+        if (roomInFacingDirection != null)
+        {
+            StartMovement(roomInFacingDirection);
+        }
+        Debug.Log("You move foward");
+    }
+    private RoomBase NextRoomInDirection()
+    {
+        if (_currentRoom == null)
+        {
+            return null;
+        }
+        switch (_facingDirection)
+        {
+            case Direction.North:
+                return _currentRoom.South;
+            case Direction.East:
+                return _currentRoom.West;
+            case Direction.South:
+                return _currentRoom.North;
+            case Direction.West:
+                return _currentRoom.East;
+            default:
+                Debug.LogError("Error: Unknown Direction!");
+                return null;
+        }
     }
     private void OnTriggerEnter(Collider otherObject)
     {
@@ -151,10 +174,20 @@ public class PlayerController : MonoBehaviour
                 SetFacingDirection();
             }
         }
-        
-        //if (_isWalking)
-        //    {
+        if (_isMoving)
+        {
+            Vector3 currentPositon = Vector3.Slerp(_previousPosition, _moveToPosition, _movementTimer / MovementTime);
 
-        //    }
+            transform.position = currentPositon;
+
+            _movementTimer += Time.deltaTime;
+
+            if (_movementTimer > MovementTime)
+            {
+                _isMoving = false;
+                _movementTimer = 0.0f;
+                transform.position = _moveToPosition;
+            }
+        }
     }
 }

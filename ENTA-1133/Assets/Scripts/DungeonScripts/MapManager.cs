@@ -15,7 +15,7 @@ public class MapManager : MonoBehaviour
         {
             for (int z = 0; z < MapSize; z++)
             {
-                Vector3 coords = new Vector3(x * RoomSize, 3 , z * RoomSize);
+                Vector3 coords = new Vector3(x * RoomSize, 0 , z * RoomSize);
 
                 var roomInstance = Instantiate(RoomPrefabs[Random.Range(0, RoomPrefabs.Length)], transform);
 

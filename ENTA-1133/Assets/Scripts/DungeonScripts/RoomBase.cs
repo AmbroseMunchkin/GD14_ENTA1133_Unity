@@ -4,16 +4,22 @@ public class RoomBase : MonoBehaviour
 {
     [SerializeField] private GameObject NorthDoorway, EastDoorway, SouthDoorway, WestDoorway;
     private RoomBase _north, _south, _east, _west;
+
+    public RoomBase South { get => _south; set => _south = value; }
+    public RoomBase North { get => _north; set => _north = value; }
+    public RoomBase East { get => _east; set => _east = value; }
+    public RoomBase West { get => _west; set => _west = value; }
+
     public void SetRooms(RoomBase roomNorth, RoomBase roomSouth, RoomBase roomEast, RoomBase roomWest)
     {
-        _north = roomNorth;
-        NorthDoorway.SetActive(_north == null);
-        _east = roomEast;
-        EastDoorway.SetActive(_east == null);
-        _south = roomSouth;
-        SouthDoorway.SetActive(_south == null);
-        _west = roomWest;
-        WestDoorway.SetActive(_west == null);
+        North = roomNorth;
+        NorthDoorway.SetActive(North == null);
+        East = roomEast;
+        EastDoorway.SetActive(East == null);
+        South = roomSouth;
+        SouthDoorway.SetActive(South == null);
+        West = roomWest;
+        WestDoorway.SetActive(West == null);
     }
     public virtual void OnRoomEntered()
     {
