@@ -14,10 +14,14 @@ public class PlayerController : MonoBehaviour
     };
     private Direction _facingDirection;
     private bool _isRotating = false;
+    private bool _isWalking = false;
 
     [SerializeField] private float RotationTime = 0.5f;
+    [SerializeField] private float WalkingTime = 1.0f;
     private float _rotationTimer = 0.0f;
     private Quaternion _previousRotation;
+
+    private RoomBase _currentRoom = null;
     public void Setup()
     {
         Direction[] directions = new Direction[] { Direction.North, Direction.East, Direction.South, Direction.West };
@@ -41,6 +45,13 @@ public class PlayerController : MonoBehaviour
     {
         MoveInput(value.Get<Vector2>());
     }
+    public void OnSearch()
+    {
+        if (_currentRoom != null)
+        {
+            _currentRoom.OnRoomSearched();
+        }
+    }
     private void MoveInput(Vector2 newMoveDirection)
     {
         Move = newMoveDirection;
@@ -52,6 +63,10 @@ public class PlayerController : MonoBehaviour
         else if (Move.x > 0)
         {
             TurnRight();
+        }
+        else if (Move.y > 0)
+        {
+            MoveFoward();
         }
     }
     private void TurnLeft()
@@ -92,11 +107,35 @@ public class PlayerController : MonoBehaviour
         }
         StartRotating();
     }
-    void Start()
+    private void MoveFoward()
     {
-        
+        //switch (_facingDirection)
+        //{
+        //    case Direction.South:
+        //        _facingDirection = Direction.West;
+        //        break;
+        //    case Direction.North:
+        //        _facingDirection = Direction.East;
+        //        break;
+        //    case Direction.East:
+        //        _facingDirection = Direction.South;
+        //        break;
+        //    case Direction.West:
+        //        _facingDirection = Direction.North;
+        //        break;
+        //}
+        Debug.Log("You try to move foward");
     }
-
+    private void OnTriggerEnter(Collider otherObject)
+    {
+        _currentRoom = otherObject.GetComponent<RoomBase>();
+        _currentRoom.OnRoomEntered();
+    }
+    private void OnTriggerExit(Collider otherObject)
+    {
+        RoomBase exitingRoom = otherObject.GetComponent<RoomBase>();
+        exitingRoom.OnRoomExited();
+    }
     private void Update()
     {
         if (_isRotating)
@@ -112,6 +151,10 @@ public class PlayerController : MonoBehaviour
                 SetFacingDirection();
             }
         }
-    
+        
+        //if (_isWalking)
+        //    {
+
+        //    }
     }
 }

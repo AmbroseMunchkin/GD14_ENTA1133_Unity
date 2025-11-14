@@ -149,7 +149,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameMapPrefab: {fileID: 7366846971238595158, guid: e0f133540e455274f825b381fd534201, type: 3}
-  PlayerPrefab: {fileID: 8620481163395478022, guid: 49b10a0f09622e54e93bb9c1d2f97be6, type: 3}
+  PlayerPrefab: {fileID: 5636290508165484505, guid: 49b10a0f09622e54e93bb9c1d2f97be6, type: 3}
 --- !u!4 &570851509
 Transform:
   m_ObjectHideFlags: 0

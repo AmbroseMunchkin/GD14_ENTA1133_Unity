@@ -15,15 +15,16 @@ public class RoomBase : MonoBehaviour
         _west = roomWest;
         WestDoorway.SetActive(_west == null);
     }
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public virtual void OnRoomEntered()
     {
-        
+        Debug.Log("You enter an empty room");
     }
-
-    // Update is called once per frame
-    void Update()
+    public virtual void OnRoomExited()
     {
-        
+        Debug.Log("You exit the empty room");
+    }
+    public virtual void OnRoomSearched()
+    {
+        Debug.Log("You search the empty room");
     }
 }

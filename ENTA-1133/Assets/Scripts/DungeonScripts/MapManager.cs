@@ -33,8 +33,8 @@ public class MapManager : MonoBehaviour
                 //The rooms get linked here
                 RoomBase currentRoom = _map[x, z];
                 RoomBase north = null, south = null, east = null, west = null;
-                if (x > 0) east = _map[x - 1, z];       //Checks if there can be a north room
-                if (x < MapSize - 1) west = _map[x + 1, z];   //Checks if there can be a south room 
+                if (x > 0) east = _map[x - 1, z];       //Checks if there can be a east room
+                if (x < MapSize - 1) west = _map[x + 1, z];   //Checks if there can be a west room 
                 if (z > 0) north = _map[x, z - 1];       //Checks if there can be a west room
                 if (z < MapSize - 1) south = _map[x, z + 1];   //Checks if there can be an east room
                 currentRoom.SetRooms(north, south, east, west);

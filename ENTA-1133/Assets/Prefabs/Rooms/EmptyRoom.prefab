@@ -119,6 +119,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1082718946862982629}
   - component: {fileID: 2176725118486340281}
+  - component: {fileID: 2165782276461167301}
   m_Layer: 0
   m_Name: EmptyRoom
   m_TagString: Untagged
@@ -161,6 +162,27 @@ MonoBehaviour:
   EastDoorway: {fileID: 1515448844349679084}
   SouthDoorway: {fileID: 86138859768248906}
   WestDoorway: {fileID: 4498644028375254355}
+--- !u!65 &2165782276461167301
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4031012124064698415}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 4, y: 3.5, z: 4}
+  m_Center: {x: 0, y: -1.25, z: 0}
 --- !u!1 &4118437810011001612
 GameObject:
   m_ObjectHideFlags: 0
