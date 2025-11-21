@@ -204,7 +204,7 @@ public class PlayerController : MonoBehaviour
         //Does the actual movement once _isMoving is set to true
         if (_isMoving)
         {
-            Vector3 currentPositon = Vector3.Slerp(_previousPosition, _moveToPosition, _movementTimer / MovementTime);
+            Vector3 currentPositon = Vector3.Lerp(_previousPosition, _moveToPosition, _movementTimer / MovementTime);
 
             transform.position = currentPositon;
 
