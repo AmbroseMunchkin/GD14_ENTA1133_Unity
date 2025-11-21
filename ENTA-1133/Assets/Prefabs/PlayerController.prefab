@@ -78,6 +78,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bab6d8cd12ea824897891521ff01829, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _inGameHud: {fileID: 1305321643017228867, guid: 3b569d2a047f6014ca05d847f4cec9e5, type: 3}
   Move: {x: 0, y: 0}
   RotationTime: 0.5
   MovementTime: 2

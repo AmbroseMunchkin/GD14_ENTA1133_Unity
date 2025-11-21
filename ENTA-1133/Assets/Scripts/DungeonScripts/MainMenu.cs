@@ -3,10 +3,14 @@ using UnityEngine;
 
 public class MainMenu : MonoBehaviour
 {
-  
+    [SerializeField] private UIManager UiSystem;
+    [SerializeField] private InGameHud GameHud;
+    [SerializeField] private GameManagerUltra GameManager;
     public void ButtonStartGame()
     {
-        gameObject.SetActive(false);
+        UiSystem.ActivateInGameHud();
+        GameHud.OnStartGame();
+        GameManager.StartTheGame();
     }
 
     public void QuitGame()
@@ -16,5 +20,15 @@ public class MainMenu : MonoBehaviour
 #else
         Application.Quit();
 #endif
+    }
+
+    public void ButtonOpenCredits()
+    {
+        UiSystem.ShowCredits();
+    }
+
+    public void ButtonOpenOptions()
+    {
+        UiSystem.ShowOptionsMenu();
     }
 }

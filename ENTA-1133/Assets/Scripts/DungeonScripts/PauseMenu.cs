@@ -2,15 +2,17 @@ using UnityEngine;
 
 public class PauseMenu : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [SerializeField] private UIManager UiSystem;
+    [SerializeField] private InGameHud InGameHud;
+
+    public void ButtonContinue()
     {
-        
+        //UiSystem.ActivateInGameHud();
+        InGameHud.OnUnpauseGame();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void ButtonReturnToMenu()
     {
-        
+        UiSystem.OpenMainMenu();
     }
 }
