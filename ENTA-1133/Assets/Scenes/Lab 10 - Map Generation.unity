@@ -316,35 +316,27 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2502499783949489817, guid: 6411287cb792af845be4a054dbbc7894, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2502499783949489817, guid: 6411287cb792af845be4a054dbbc7894, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2502499783949489817, guid: 6411287cb792af845be4a054dbbc7894, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 482.9421
       objectReference: {fileID: 0}
     - target: {fileID: 2502499783949489817, guid: 6411287cb792af845be4a054dbbc7894, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 241.47105
       objectReference: {fileID: 0}
     - target: {fileID: 2502499783949489817, guid: 6411287cb792af845be4a054dbbc7894, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -133
       objectReference: {fileID: 0}
     - target: {fileID: 2681763482359071146, guid: 6411287cb792af845be4a054dbbc7894, type: 3}
       propertyPath: m_Name
       value: UI Manager
-      objectReference: {fileID: 0}
-    - target: {fileID: 4197759669055231486, guid: 6411287cb792af845be4a054dbbc7894, type: 3}
-      propertyPath: m_Text
-      value: Return to Menu
-      objectReference: {fileID: 0}
-    - target: {fileID: 4197759669055231486, guid: 6411287cb792af845be4a054dbbc7894, type: 3}
-      propertyPath: m_FontData.m_FontSize
-      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 5496056644223586034, guid: 6411287cb792af845be4a054dbbc7894, type: 3}
       propertyPath: m_IsActive
@@ -432,23 +424,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7503138799044827704, guid: 6411287cb792af845be4a054dbbc7894, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7503138799044827704, guid: 6411287cb792af845be4a054dbbc7894, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7503138799044827704, guid: 6411287cb792af845be4a054dbbc7894, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 482.9421
       objectReference: {fileID: 0}
     - target: {fileID: 7503138799044827704, guid: 6411287cb792af845be4a054dbbc7894, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 241.47105
       objectReference: {fileID: 0}
     - target: {fileID: 7503138799044827704, guid: 6411287cb792af845be4a054dbbc7894, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -283
       objectReference: {fileID: 0}
     - target: {fileID: 8799722562245458306, guid: 6411287cb792af845be4a054dbbc7894, type: 3}
       propertyPath: GameManager

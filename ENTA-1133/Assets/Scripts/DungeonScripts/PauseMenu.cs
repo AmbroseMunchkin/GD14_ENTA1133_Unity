@@ -7,7 +7,7 @@ public class PauseMenu : MonoBehaviour
 
     public void ButtonContinue()
     {
-        //UiSystem.ActivateInGameHud();
+        UiSystem.ActivateInGameHud();
         InGameHud.OnUnpauseGame();
     }
 
