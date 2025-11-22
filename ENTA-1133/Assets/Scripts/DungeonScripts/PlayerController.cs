@@ -4,6 +4,9 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField] private InGameHud _inGameHud;
+    [SerializeField] private UIManager UiSystem;
+
     public Vector2 Move;
     //Directions N,E,S and W gets set for rotation and walking movement
     private Dictionary<Direction, int> _rotationByDirection = new()
@@ -76,6 +79,12 @@ public class PlayerController : MonoBehaviour
         {
             _currentRoom.OnRoomSearched();
         }
+    }
+
+    public void OnPause()
+    {
+        //UiSystem.ShowPausegameMenu();
+        _inGameHud.OnPauseGame();
     }
 
     //WASD and SPACE BAR inputs get called here with their respective actions
@@ -204,7 +213,7 @@ public class PlayerController : MonoBehaviour
         //Does the actual movement once _isMoving is set to true
         if (_isMoving)
         {
-            Vector3 currentPositon = Vector3.Slerp(_previousPosition, _moveToPosition, _movementTimer / MovementTime);
+            Vector3 currentPositon = Vector3.Lerp(_previousPosition, _moveToPosition, _movementTimer / MovementTime);
 
             transform.position = currentPositon;
 
