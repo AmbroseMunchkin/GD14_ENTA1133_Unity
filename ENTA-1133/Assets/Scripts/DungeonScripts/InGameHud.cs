@@ -24,8 +24,12 @@ public class InGameHud : MonoBehaviour
 
     private void Update()
     {
-        if (_gamePaused)
-            return;
+        if (_gamePaused != false)
+        {
+            Debug.Log(gameObject.name);
+            UiSystem.ShowPausegameMenu();
+        }
+        
         
         _timer += Time.deltaTime;
         Timer.text = $"{_timer,0:0.000}";
@@ -33,13 +37,17 @@ public class InGameHud : MonoBehaviour
 
     public void OnPauseGame()
     {
-        UiSystem.ShowPausegameMenu();
         _gamePaused = true;
         if (_gamePaused == true)
         {
+            Debug.Log(gameObject.name);
             Debug.Log("Game Paused Succesfully");
-            UiSystem.ShowPausegameMenu();
         }
+    }
+
+    public void OnPause()
+    {
+        OnPauseGame();
     }
 
     public void OnUnpauseGame()
@@ -47,8 +55,8 @@ public class InGameHud : MonoBehaviour
         _gamePaused = false;
         if (_gamePaused == false)
         {
+            Debug.Log(gameObject.name);
             Debug.Log("Game Unpaused Succesfully");
-            UiSystem.ActivateInGameHud();
         }
     }
 

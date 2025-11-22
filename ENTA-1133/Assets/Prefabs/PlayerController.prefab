@@ -79,7 +79,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _inGameHud: {fileID: 1305321643017228867, guid: 3b569d2a047f6014ca05d847f4cec9e5, type: 3}
-  UiSystem: {fileID: 8146544852728809765, guid: 6411287cb792af845be4a054dbbc7894, type: 3}
+  UiSystem: {fileID: 0}
   Move: {x: 0, y: 0}
   RotationTime: 0.5
   MovementTime: 2

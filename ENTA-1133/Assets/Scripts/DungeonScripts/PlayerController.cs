@@ -5,7 +5,6 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private InGameHud _inGameHud;
-    [SerializeField] private UIManager UiSystem;
 
     public Vector2 Move;
     //Directions N,E,S and W gets set for rotation and walking movement
@@ -81,11 +80,10 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void OnPause()
-    {
-        //UiSystem.ShowPausegameMenu();
-        _inGameHud.OnPauseGame();
-    }
+    //public void OnPause()
+    //{
+    //    _inGameHud.OnPauseGame();
+    //}
 
     //WASD and SPACE BAR inputs get called here with their respective actions
     private void MoveInput(Vector2 newMoveDirection)
