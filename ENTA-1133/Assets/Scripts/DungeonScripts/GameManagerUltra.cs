@@ -8,7 +8,7 @@ public class GameManagerUltra : MonoBehaviour
     private MapManager _gameMap;
     private PlayerController _playerController;
 
-    public void StartTheGame()
+    public void Start()
     {
         Debug.Log("GameManager Start Begins");
 

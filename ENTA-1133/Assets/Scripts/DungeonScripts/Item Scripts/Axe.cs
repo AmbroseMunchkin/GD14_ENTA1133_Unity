@@ -1,21 +1,28 @@
 using UnityEngine;
 
-public class Axe : Weapon
+public class Axe : ItemData
 {
-    public override int damage { get { return 0; } }
+    public Axe(string itemName, Rarity rarity, int damage) : base(itemName, rarity)
+    {
+        itemName = "Axe";
+        rarity = Rarity.Common;
+        damage = Roll();
+    }
 
-    public override int minRoll { get { return 0; } }
+    public int damage;
 
-    public override int maxRoll { get { return 8; } }
+    public int minRoll = 0;
 
-    internal override int Used()
+    public int maxRoll = 8;
+
+    internal int Used()
     {
         //damage = Roll();
         Debug.Log("You hit the moster with the axe, it makes " + damage + " damage!");
         return damage;
     }
 
-    internal override int Roll()
+    internal int Roll()
     {
         var roll = Random.Range(minRoll, maxRoll);
         //damage = roll;

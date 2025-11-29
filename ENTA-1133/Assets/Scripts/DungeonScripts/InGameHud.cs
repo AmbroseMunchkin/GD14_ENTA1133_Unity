@@ -5,7 +5,7 @@ public class InGameHud : MonoBehaviour
 {
     [SerializeField] private Image HealthBar;
     [SerializeField] private Text Timer;
-    [SerializeField] private UIManager UiSystem;
+    [SerializeField] private PauseMenu PauseMenu;
 
     private bool _gamePaused = true;
     private float _timer = 0.0f;
@@ -27,7 +27,7 @@ public class InGameHud : MonoBehaviour
         if (_gamePaused != false)
         {
             Debug.Log(gameObject.name);
-            UiSystem.ShowPausegameMenu();
+
         }
         
         
@@ -41,6 +41,8 @@ public class InGameHud : MonoBehaviour
         if (_gamePaused == true)
         {
             Debug.Log(gameObject.name);
+            PauseMenu.PausedGame();
+            Time.timeScale = 0f;
             Debug.Log("Game Paused Succesfully");
         }
     }
@@ -56,6 +58,7 @@ public class InGameHud : MonoBehaviour
         if (_gamePaused == false)
         {
             Debug.Log(gameObject.name);
+            Time.timeScale = 1f;
             Debug.Log("Game Unpaused Succesfully");
         }
     }
