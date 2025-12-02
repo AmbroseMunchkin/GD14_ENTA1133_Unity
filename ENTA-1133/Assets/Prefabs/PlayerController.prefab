@@ -1320,11 +1320,11 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'w - Foward
+  m_Text: 'w - Forward
 
-    a - Left
+    a - turn Left
 
-    d - right
+    d - turn right
 
     Spacebar - search
 
