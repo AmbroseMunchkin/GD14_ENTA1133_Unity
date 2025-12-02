@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CombatRoom : RoomBase
 {
@@ -14,6 +15,7 @@ public class CombatRoom : RoomBase
     }
     public override void OnRoomSearched()
     {
+        SceneManager.LoadScene("Battle");
         Debug.Log("You search the combat room");
     }
 }

@@ -1,25 +1,26 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
     [SerializeField] private UIManager UiSystem;
     [SerializeField] private InGameHud InGameHud;
+    [SerializeField] private PlayerUIManager PlayerUIManager;
 
-    public void OnPause()
+    public void PausedGame()
     {
-        ButtonContinue();
+        PlayerUIManager.ShowPauseMenu();
     }
-
-    
     public void ButtonContinue()
     {
-        UiSystem.ActivateInGameHud();
         InGameHud.OnUnpauseGame();
+        PlayerUIManager.OpenInGameHud();
     }
     
 
     public void ButtonReturnToMenu()
     {
-        UiSystem.OpenMainMenu();
+        SceneManager.LoadScene("Menu");
+        SceneManager.UnloadScene("Game");
     }
 }

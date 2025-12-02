@@ -7,10 +7,8 @@ public class UIManager : MonoBehaviour
     private enum MenuLayouts
     {
         Main = 0,
-        InGame = 1,
-        Pause = 2,
-        Options = 3,
-        Credits = 4,
+        Options = 1,
+        Credits = 2,
     }
 
     private void Start()
@@ -31,16 +29,6 @@ public class UIManager : MonoBehaviour
         SetLayout(MenuLayouts.Main);
     }
 
-    public void ActivateInGameHud()
-    {
-        SetLayout(MenuLayouts.InGame);
-    }
-
-    public void ShowPausegameMenu()
-    {
-        SetLayout(MenuLayouts.Pause);
-    }
-
     public void ShowOptionsMenu()
     {
         SetLayout(MenuLayouts.Options);
@@ -49,5 +37,10 @@ public class UIManager : MonoBehaviour
     public void ShowCredits()
     {
         SetLayout(MenuLayouts.Credits);
+    }
+
+    public void CloseMainMenu()
+    {
+        Layouts[0].SetActive(false);
     }
 }

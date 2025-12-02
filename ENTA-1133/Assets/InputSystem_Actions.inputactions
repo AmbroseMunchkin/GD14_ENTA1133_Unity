@@ -485,17 +485,6 @@
                 },
                 {
                     "name": "",
-                    "id": "5f608e55-c097-4f2b-80a2-d06c642cbfe9",
-                    "path": "<Keyboard>/space",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Keyboard&Mouse",
-                    "action": "Pause",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "6c4ee5e0-ee0f-4ebc-a377-469b41ea9437",
                     "path": "<Keyboard>/escape",
                     "interactions": "",
